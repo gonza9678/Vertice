@@ -79,10 +79,6 @@ h1{
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-.nav-item{
-    margin-right: 10px;
-}
-
 .botones{
     margin-left: 45px;
 }
@@ -90,6 +86,24 @@ h1{
 .carousel-item img{
     border-radius: 25px;
 }
+
+.carousel-item img{
+    position: relative;
+}
+.corusel-texto{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px !important;
+    color: #F8FAFC;
+    font-weight: 1000;
+}
+
+#ocultar{
+    display: none;
+}
+
 
 .botones-primero{
     padding: 13px 35px 13px 35px;
@@ -101,6 +115,17 @@ h1{
     cursor: pointer;
     margin-right: 10px;
     transition: 0.2s;
+}
+
+.navbar-nav {
+    gap: 20px !important;
+    
+    justify-content: center;
+}
+
+.nav-link{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 .botones-primero:hover{
@@ -139,12 +164,21 @@ h1{
 .titulo{
     text-align: center;
     color: #1E3A8A;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     font-weight: 1000 !important;
 }
 
 .editIcono{
-    width: 95px;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secundario);
+    border-radius: 50%;
+    padding: 40px;
+    box-shadow: var(--sombra-imput2);
+}
+.editIcono-panfleto{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,12 +189,12 @@ h1{
 }
 
 .icono-edit{
-    font-size:55px;
+    font-size:40px;
     color: var(--color-primario);
 }
 
 .promociones{
-    margin-bottom: 50px; 
+    margin-bottom: 100px; 
 }
 
 .titulo-promo{
@@ -190,10 +224,69 @@ h1{
 
 .card-title{
     color: var(--color-primario) !important;
-    text-align: center;
-    font-weight: 800;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 22px;
 }
 
+.contenedor-tajetas-index{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.cuadro-tarjetas{
+    position: relative;
+    background-color: var(--color-fondo) !important;
+    padding: 10px;
+    gap: 10px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 15px ;
+    align-items: left;
+    box-shadow: var(--sombra-imput2);
+    transition: 0.2s;
+}
+
+.cuadro-tarjetas:hover{
+    transform: scale(1.1);
+}
+
+.cuadro-tarjetas p{
+    margin-bottom: 0;;
+}
+
+.circulo-flotante{
+    width: 20%;
+    height: 20%;
+    background-color: #F97316;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.flechas {
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    width: 36px;
+    height: 36px;
+    background-color: #ff7514;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.4s;
+}
+.cuadro-tarjetas:hover .flechas{
+    transform: translateX(5px);
+}
 
 .panfleto{
     background-color: var(--color-secundario);
@@ -222,6 +315,10 @@ h1{
     align-items: center;
 }
 
+.panfleto-texto .titulo{
+    text-align: left !important;
+}
+
 .pan-caja{
     background-color: var(--color-fondo);
     padding: 15px;
@@ -239,7 +336,7 @@ h1{
 .pan-caja-titulo{
     font-size: 22px;
     color: var(--color-primario);
-    font-weight: 800;
+    font-weight: 1000;
 }
 
 .descubri{
@@ -366,6 +463,7 @@ h1{
     grid-template-columns: repeat(2, 1fr);
     gap: 45px;
     margin-bottom: 75px;
+    align-items: center;
 }
 
 .comunicate-img img{ 
@@ -396,7 +494,7 @@ h1{
     color: var(--color-primario);
     font-size: 36px;
     font-weight: 1000;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    
 }
 
 
@@ -729,6 +827,13 @@ h1{
     box-shadow: var(--sombra-fuerte);
 }
 
+.form-label{
+    font-size: 22px;
+}
+
+.accordion-header{
+    font-size: 18px;
+}
 
 @media screen and (max-width: 1610px){
     .botones{
@@ -758,7 +863,7 @@ h1{
 
 }
 
-@media screen and (max-width: 1160px){
+@media screen and (max-width: 1190px){
     .container-inicio {
         max-width: 95%;
     }
@@ -794,6 +899,14 @@ h1{
     .footer-social-descarga{
         flex-direction: column;
     }
+    .navbar-nav{
+        align-items: left;
+        justify-content: left;
+    }
+    .corusel-texto{
+        font-size: 38px !important;
+    }
+
 }
 
 @media screen and (max-width: 850px) {
@@ -812,13 +925,11 @@ h1{
     .quienes-panfleto{
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
-@media screen and (max-width: 730px){
-    .comunicate-cuadro{
-        grid-template-columns: repeat(1, 1fr);
-        margin-bottom: 150px;
-    }
+@media screen and (max-width: 745px){
+
     .panfleto-caja{
         grid-template-columns: repeat(1, 1fr);
         padding: 0px;
@@ -840,6 +951,22 @@ h1{
     .quienes-panfleto{
         grid-template-columns: repeat(1, 1fr);
     }
+    .contenedor-tajetas-index{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .corusel-texto{
+        font-size: 28px !important;
+    }
+    #ocultar{
+        display: flex;
+    }
+    #ocultar2{
+        display: none;
+    }
+    .comunicate-cuadro{
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 150px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -847,8 +974,11 @@ h1{
         padding-left: 45px;
         padding-right: 45px;
     }
+    .ElCarrusel{
+        margin-bottom: 50px;
+    }
     .contenedor-tarjetas {
-        gap: 0;
+        gap: 1;
     }
     .tarjeta {
         flex: 0 0 100%;
@@ -858,12 +988,39 @@ h1{
     }
     .container-inicio {
         max-width: 100%;
-        padding: 0px 30px;
+        padding: 0px 15px;
     }
 
     .login-izq{
         margin-left: 0;
         width: 100%;
+    }
+    .card-title, .link-tarjerta-titulo, .accordion-header, .form-label{
+        font-size: 16px;
+    }
+    p, .link-tarjerta-texto{
+        font-size: 14px !important;
+    }
+    .panfleto-texto .titulo {
+        text-align: center !important;
+    }
+    .titulo, .comunicate-texto-titulo{
+        font-size: 24px;
+    }
+    .pan-caja-titulo{
+        font-size: 20px;
+    }
+    .comunicate-cuadro, .panfleto{
+        margin-bottom: 50px;
+    }
+    .carrusel{
+        padding: 0 50px 50px;
+    }
+    .zona-link{
+        margin-top:  50px !important;
+    }
+    .corusel-texto{
+        font-size: 24px !important;
     }
 }
 
